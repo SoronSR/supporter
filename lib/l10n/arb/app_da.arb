@@ -15,5 +15,9 @@
     "myTeamsFloatingActionButtonAddTeam": "Tilføj hold",
     "@myTeamsFloatingActionButtonAddTeam": {
         "description": "Text shown in the FloatingActionButton for Add Team"
-    }       
+    }, 
+    "floatingSearchBarHint": "Søg...",
+    "@floatingSearchBarHint": {
+        "description": "Text shown in the FloatingSearchBar for hint property"
+    }        
 }

@@ -15,5 +15,9 @@
     "myTeamsFloatingActionButtonAddTeam": "Add Team",
     "@myTeamsFloatingActionButtonAddTeam": {
         "description": "Text shown in the FloatingActionButton for Add Team"
-    }       
+    }, 
+    "floatingSearchBarHint": "Search...",
+    "@floatingSearchBarHint": {
+        "description": "Text shown in the FloatingSearchBar for hint property"
+    }           
 }
