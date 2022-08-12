@@ -1,0 +1,19 @@
+{
+    "@@locale": "da",
+    "homeBottomNavigationMyTeams": "Mine hold",
+    "@homeBottomNavigationMyTeams": {
+        "description": "Text shown in the Bottom Navigation Bar for My Teams"
+    },   
+    "homeBottomNavigationCalendar": "Kalender",
+    "@homeBottomNavigationCalendar": {
+        "description": "Text shown in the Bottom Navigation Bar for Calendar"
+    }, 
+    "homeBottomNavigationSettings": "Indstillnger",
+    "@homeBottomNavigationSettings": {
+        "description": "Text shown in the Bottom Navigation Bar for Settings"
+    }, 
+    "myTeamsFloatingActionButtonAddTeam": "Tilføj hold",
+    "@myTeamsFloatingActionButtonAddTeam": {
+        "description": "Text shown in the FloatingActionButton for Add Team"
+    }       
+}

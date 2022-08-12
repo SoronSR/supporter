@@ -1,0 +1,19 @@
+{
+    "@@locale": "en",
+    "homeBottomNavigationMyTeams": "My Teams",
+    "@homeBottomNavigationMyTeams": {
+        "description": "Text shown in the Bottom Navigation Bar for My Teams"
+    },   
+    "homeBottomNavigationCalendar": "Calendar",
+    "@homeBottomNavigationCalendar": {
+        "description": "Text shown in the Bottom Navigation Bar for Calendar"
+    }, 
+    "homeBottomNavigationSettings": "Settings",
+    "@homeBottomNavigationSettings": {
+        "description": "Text shown in the Bottom Navigation Bar for Settings"
+    }, 
+    "myTeamsFloatingActionButtonAddTeam": "Add Team",
+    "@myTeamsFloatingActionButtonAddTeam": {
+        "description": "Text shown in the FloatingActionButton for Add Team"
+    }       
+}
