@@ -11,6 +11,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:supporter/home/home.dart';
 import 'package:supporter/l10n/l10n.dart';
+import 'package:supporter/my_teams/my_teams.dart';
+import 'package:supporter/team_search/cubit/team_search_cubit.dart';
 import 'package:team_repository/team_repository.dart';
 
 class App extends StatelessWidget {
@@ -31,7 +33,18 @@ class App extends StatelessWidget {
         RepositoryProvider.value(value: _teamRepository),
         RepositoryProvider.value(value: _fixtureRepository),
       ],
-      child: const AppView(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider<TeamSearchCubit>(
+            create: (BuildContext context) =>
+                TeamSearchCubit(teamRepository: _teamRepository),
+          ),
+          BlocProvider<MyTeamsCubit>(
+            create: (BuildContext context) => MyTeamsCubit(),
+          ),
+        ],
+        child: const AppView(),
+      ),
     );
   }
 }

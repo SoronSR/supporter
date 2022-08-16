@@ -9,20 +9,22 @@ environment:
 
 dependencies:
   bloc: ^8.1.0
+  cached_network_image: ^3.2.1
   fixture_repository:
     path: packages/fixture_repository
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_dotenv: ^5.0.2
-  flutter_localizations:
+  flutter_localizations: 
     sdk: flutter
   football_api:
     path: packages/football_api
   http: ^0.13.5
+  hydrated_bloc: ^9.0.0-dev.3
   intl: ^0.17.0
-  material_floating_search_bar: ^0.3.7
   mockingjay: ^0.3.0
+  path_provider: ^2.0.11
   team_repository:
     path: packages/team_repository
 

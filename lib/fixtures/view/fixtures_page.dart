@@ -2,7 +2,6 @@ import 'package:fixture_repository/fixture_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:supporter/fixtures/fixtures.dart';
-import 'package:supporter/l10n/l10n.dart';
 
 class FixturesPage extends StatelessWidget {
   const FixturesPage({super.key});
@@ -47,7 +46,6 @@ class _Content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
     final status = context.select((FixturesCubit cubit) => cubit.state.status);
 
     switch (status) {

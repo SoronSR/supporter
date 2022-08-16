@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:supporter/home/home.dart';
 import 'package:supporter/l10n/l10n.dart';
-import 'package:supporter/teams/teams.dart';
+import 'package:supporter/my_teams/my_teams.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,7 +20,7 @@ class HomeView extends StatelessWidget {
   HomeView({super.key});
 
   final screens = [
-    const TeamsPage(),
+    const MyTeamsPage(),
     const Center(
       child: Text('2'),
     ),

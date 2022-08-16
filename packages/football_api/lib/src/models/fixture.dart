@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:football_api/football_api.dart';
-import 'package:football_api/src/models/fixture_team.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'fixture.g.dart';

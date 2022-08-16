@@ -6,15 +6,24 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:fixture_repository/fixture_repository.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:supporter/app/app.dart';
 import 'package:supporter/bootstrap.dart';
 import 'package:team_repository/team_repository.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   final teamRepository = TeamRepository();
   final fixtureRepository = FixtureRepository();
-
-  bootstrap(
+  HydratedBloc.storage = await HydratedStorage.build(
+    storageDirectory: kIsWeb
+        ? HydratedStorage.webStorageDirectory
+        : await getTemporaryDirectory(),
+  );
+  await bootstrap(
     () => App(
       teamRepository: teamRepository,
       fixtureRepository: fixtureRepository,

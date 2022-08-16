@@ -12,12 +12,12 @@
     "@homeBottomNavigationSettings": {
         "description": "Text shown in the Bottom Navigation Bar for Settings"
     }, 
-    "myTeamsFloatingActionButtonAddTeam": "Tilføj hold",
-    "@myTeamsFloatingActionButtonAddTeam": {
-        "description": "Text shown in the FloatingActionButton for Add Team"
+    "myTeamsAppBarTitle": "Mine holde",
+    "@myTeamsAppBarTitle": {
+        "description": "Text shown in the AppBar title"
     }, 
-    "floatingSearchBarHint": "Søg...",
-    "@floatingSearchBarHint": {
-        "description": "Text shown in the FloatingSearchBar for hint property"
-    }        
+    "myTeamsAppBarFloatingActionButtonLabel": "Tilføj hold",
+    "@myTeamsAppBarFloatingActionButtonLabel": {
+        "description": "Text shown in the AppBar FloatingActionButton"
+    }       
 }
