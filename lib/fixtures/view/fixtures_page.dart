@@ -19,7 +19,7 @@ class FixturesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const FixturesPage();
+    return const FixturesView();
   }
 }
 

@@ -9,6 +9,7 @@ import 'package:fixture_repository/fixture_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:player_repository/player_repository.dart';
 import 'package:supporter/home/home.dart';
 import 'package:supporter/l10n/l10n.dart';
 import 'package:supporter/my_teams/my_teams.dart';
@@ -20,11 +21,14 @@ class App extends StatelessWidget {
     super.key,
     required TeamRepository teamRepository,
     required FixtureRepository fixtureRepository,
+    required PlayerRepository playerRepository,
   })  : _teamRepository = teamRepository,
-        _fixtureRepository = fixtureRepository;
+        _fixtureRepository = fixtureRepository,
+        _playerRepository = playerRepository;
 
   final TeamRepository _teamRepository;
   final FixtureRepository _fixtureRepository;
+  final PlayerRepository _playerRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +36,7 @@ class App extends StatelessWidget {
       providers: [
         RepositoryProvider.value(value: _teamRepository),
         RepositoryProvider.value(value: _fixtureRepository),
+        RepositoryProvider.value(value: _playerRepository),
       ],
       child: MultiBlocProvider(
         providers: [

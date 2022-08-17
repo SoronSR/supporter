@@ -46,6 +46,25 @@ class FootballApiClient {
 
   final http.Client _httpClient;
 
+  Future<List<Player>> fetchSquadPlayers(int teamId) async {
+    String api = 'v3/players/squad';
+    Map<String, String> queryParams = {
+      'team': '$teamId',
+    };
+
+    final uri = Uri.http(endpoint, api, queryParams);
+    final responseBody = await _get(uri, headers);
+
+    try {
+      return responseBody
+          .map((item) =>
+              Player.fromJson(item['players'] as Map<String, dynamic>))
+          .toList();
+    } catch (_) {
+      throw JsonDeserializationException();
+    }
+  }
+
   Future<List<Team>> fetchAllTeams() async {
     String api = 'v3/teams';
     Map<String, String> queryParams = {
@@ -57,8 +76,7 @@ class FootballApiClient {
 
     try {
       return responseBody
-          .map((dynamic item) =>
-              Team.fromJson(item['team'] as Map<String, dynamic>))
+          .map((item) => Team.fromJson(item['team'] as Map<String, dynamic>))
           .toList();
     } catch (_) {
       throw JsonDeserializationException();

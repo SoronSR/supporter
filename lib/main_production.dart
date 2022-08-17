@@ -10,6 +10,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:player_repository/player_repository.dart';
 import 'package:supporter/app/app.dart';
 import 'package:supporter/bootstrap.dart';
 import 'package:team_repository/team_repository.dart';
@@ -18,6 +19,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final teamRepository = TeamRepository();
   final fixtureRepository = FixtureRepository();
+  final playerRepository = PlayerRepository();
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
         ? HydratedStorage.webStorageDirectory
@@ -27,6 +29,7 @@ Future<void> main() async {
     () => App(
       teamRepository: teamRepository,
       fixtureRepository: fixtureRepository,
+      playerRepository: playerRepository,
     ),
   );
 }

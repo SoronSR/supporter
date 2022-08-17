@@ -8,6 +8,7 @@
 import 'package:fixture_repository/fixture_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockingjay/mockingjay.dart';
+import 'package:player_repository/player_repository.dart';
 import 'package:supporter/app/app.dart';
 import 'package:team_repository/team_repository.dart';
 
@@ -18,9 +19,12 @@ class MockFixtureRepository extends Mock implements FixtureRepository {}
 void main() {
   late TeamRepository teamRepository;
   late FixtureRepository fixtureRepository;
+  late PlayerRepository playerRepository;
+
   setUp(() {
     teamRepository = TeamRepository();
     fixtureRepository = FixtureRepository();
+    playerRepository = PlayerRepository();
   });
 
   group('App', () {
@@ -29,6 +33,7 @@ void main() {
         App(
           teamRepository: teamRepository,
           fixtureRepository: fixtureRepository,
+          playerRepository: playerRepository,
         ),
       );
       expect(find.byType(AppView), findsOneWidget);

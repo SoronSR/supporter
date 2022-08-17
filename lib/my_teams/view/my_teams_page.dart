@@ -4,8 +4,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_api/football_api.dart';
+import 'package:supporter/fixtures/fixtures.dart';
 import 'package:supporter/l10n/l10n.dart';
 import 'package:supporter/my_teams/cubit/my_teams_cubit.dart';
+import 'package:supporter/team_details/team_details.dart';
 import 'package:supporter/team_search/cubit/team_search_cubit.dart';
 
 class MyTeamsPage extends StatelessWidget {
@@ -77,6 +79,11 @@ class _TeamList extends StatelessWidget {
             context.read<MyTeamsCubit>().removeTeam(teams[index]);
           },
           child: ListTile(
+            onTap: () {
+              Navigator.of(context).push(
+                TeamDetailsPage.route(team: teams[index]),
+              );
+            },
             leading: Padding(
               padding: const EdgeInsets.all(8),
               child: CachedNetworkImage(
