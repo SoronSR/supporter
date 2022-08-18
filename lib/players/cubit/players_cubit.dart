@@ -27,6 +27,7 @@ class PlayersCubit extends Cubit<PlayersState> {
         PlayersState(
           status: PlayersStatus.success,
           players: players,
+          isLoaded: true,
         ),
       );
     } catch (e) {

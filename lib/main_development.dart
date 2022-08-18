@@ -5,6 +5,8 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+import 'dart:developer';
+
 import 'package:fixture_repository/fixture_repository.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -17,14 +19,17 @@ import 'package:team_repository/team_repository.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final teamRepository = TeamRepository();
-  final fixtureRepository = FixtureRepository();
-  final playerRepository = PlayerRepository();
+
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
         ? HydratedStorage.webStorageDirectory
         : await getTemporaryDirectory(),
   );
+
+  final teamRepository = TeamRepository();
+  final fixtureRepository = FixtureRepository();
+  final playerRepository = PlayerRepository();
+
   await bootstrap(
     () => App(
       teamRepository: teamRepository,

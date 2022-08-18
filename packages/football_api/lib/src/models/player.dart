@@ -1,6 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -11,7 +8,8 @@ class Player extends Equatable {
   final int id;
   final String name;
   final int age;
-  final int number;
+  @JsonKey(defaultValue: -1)
+  final int? number;
   final String position;
   final String photo;
 
@@ -30,7 +28,7 @@ class Player extends Equatable {
       id,
       name,
       age,
-      number,
+      number!,
       position,
       photo,
     ];

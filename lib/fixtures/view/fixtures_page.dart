@@ -28,24 +28,6 @@ class FixturesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final l10n = context.l10n;
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Teams'),
-      ),
-      body: const Center(
-        child: _Content(),
-      ),
-    );
-  }
-}
-
-class _Content extends StatelessWidget {
-  const _Content();
-
-  @override
-  Widget build(BuildContext context) {
     final status = context.select((FixturesCubit cubit) => cubit.state.status);
 
     switch (status) {
